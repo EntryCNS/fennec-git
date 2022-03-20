@@ -14,6 +14,7 @@ class CommandMapper {
         fun execute(args: Array<String>) {
             if(args.size == 0) {
                 System.out.println("Command required.")
+                CommandHelper.printHelp()
                 exitProcess(1)
             }
 
@@ -24,6 +25,7 @@ class CommandMapper {
                 ArgumentValidator(command, args).validate()
                 command.run(args)
             }catch (ex: Exception) {
+                CommandHelper.printHelp()
                 System.err.println("Command '${args[0]}' not found.")
             }
         }
