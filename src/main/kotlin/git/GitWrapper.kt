@@ -22,8 +22,10 @@ final class GitWrapper {
         while(process.isAlive) { Thread.sleep(100) }
         process.waitFor()
 
+        val response = reader.readLines().joinToString("\n")
         process.destroy()
-        return reader.readLines().joinToString("\n")
+
+        return response
     }
 
     public fun push(force: Boolean = false): String {
