@@ -6,7 +6,7 @@ import kotlin.system.exitProcess
 class CommandMapper {
     companion object {
         val map: Map<String, FennecCommand> = mapOf(
-
+            "update" to UploadCommand()
         )
 
         fun execute(args: Array<String>) {
