@@ -19,10 +19,10 @@ class CommandMapper {
 
             try {
                 val command = map.get(args[0])!!
-                val args = args.slice(1 until args.size)
+                val slicedArgs = args.slice(1 until args.size)
 
-                ArgumentValidator(command, args).validate()
-                command.run(args)
+                ArgumentValidator(command, slicedArgs).validate()
+                command.run(slicedArgs)
             }catch (ex: Exception) {
                 System.err.println("No such command '${args[0]}' Reference this:")
                 CommandHelper.printHelp()
