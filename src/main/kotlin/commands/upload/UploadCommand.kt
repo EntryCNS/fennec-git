@@ -25,7 +25,7 @@ class UploadCommand: FennecCommand() {
 
         val gitWrapper = GitWrapper()
         println(gitWrapper.commit(commitTitle, commitDescription))
-        //gitWrapper.push()
+        println(gitWrapper.push())
 
         println("Committed and pushed into branch ${gitWrapper.getCurrentBranch()} successfully.")
     }
