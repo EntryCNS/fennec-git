@@ -17,6 +17,11 @@ class UploadCommand: FennecCommand() {
 
     override fun run(arguments: List<String>) {
         println(arguments.joinToString(" / "))
+
+        val emoji = CommitType.valueOf(arguments[0]).emoji
+        val commitTitle = "$emoji ${arguments[1]}"
+        val commitDescription = arguments.getOrNull(2)
+
     }
 
 }
