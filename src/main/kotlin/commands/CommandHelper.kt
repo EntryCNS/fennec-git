@@ -5,7 +5,7 @@ class CommandHelper {
         fun printCommandHelp(cmd: FennecCommand) {
             val args = cmd.getRequiredArguments().map { "<${it.name}${if(it.optional) "?" else ""}>" }.joinToString(" ")
             println("fennec ${cmd.getName()} ${args}")
-            println("${cmd.getDescription()}")
+            println("  * ${cmd.getDescription()}")
             println("  * Required args:")
             cmd.getRequiredArguments().forEach { arg ->
                 println("    * '${arg.name}'(${arg.allowType.map { it.name }.joinToString("/")}${if(arg.optional) "?" else ""})")

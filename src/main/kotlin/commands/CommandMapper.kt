@@ -13,7 +13,6 @@ class CommandMapper {
 
         fun execute(args: Array<String>) {
             if(args.size == 0) {
-                System.out.println("Command required.")
                 CommandHelper.printHelp()
                 exitProcess(1)
             }
