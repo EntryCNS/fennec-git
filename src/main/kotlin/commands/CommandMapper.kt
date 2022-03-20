@@ -24,8 +24,8 @@ class CommandMapper {
                 ArgumentValidator(command, args).validate()
                 command.run(args)
             }catch (ex: Exception) {
+                System.err.println("No such command '${args[0]}' Reference this:")
                 CommandHelper.printHelp()
-                System.err.println("Command '${args[0]}' not found.")
             }
         }
 
