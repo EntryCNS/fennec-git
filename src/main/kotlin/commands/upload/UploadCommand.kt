@@ -3,6 +3,7 @@ package commands.upload
 import commands.ArgumentType
 import commands.FennecArgument
 import commands.FennecCommand
+import git.GitWrapper
 
 class UploadCommand: FennecCommand() {
     override fun getName(): String = "upload"
@@ -22,6 +23,11 @@ class UploadCommand: FennecCommand() {
         val commitTitle = "$emoji ${arguments[1]}"
         val commitDescription = arguments.getOrNull(2)
 
+        val gitWrapper = GitWrapper()
+        gitWrapper.commit(commitTitle, commitDescription)
+        //gitWrapper.push()
+
+        println("Committed and pushed into branch ${gitWrapper.getCurrentBranch()} successfully.")
     }
 
 }
