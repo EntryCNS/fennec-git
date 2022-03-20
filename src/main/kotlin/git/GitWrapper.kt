@@ -44,5 +44,9 @@ final class GitWrapper {
         return execute("git branch").split(" ").last()
     }
 
+    public fun addAll() {
+        execute("git add --all")
+    }
+
 
 }

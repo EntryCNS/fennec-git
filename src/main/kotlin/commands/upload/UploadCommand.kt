@@ -24,6 +24,7 @@ class UploadCommand: FennecCommand() {
         val commitDescription = arguments.getOrNull(2)
 
         val gitWrapper = GitWrapper()
+        gitWrapper.addAll()
         println(gitWrapper.commit(commitTitle, commitDescription))
         println(gitWrapper.push())
 
