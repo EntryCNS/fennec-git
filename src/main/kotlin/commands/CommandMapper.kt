@@ -1,12 +1,14 @@
 package commands
 
+import commands.help.HelpCommand
 import commands.upload.UploadCommand
 import kotlin.system.exitProcess
 
 class CommandMapper {
     companion object {
         val map: Map<String, FennecCommand> = mapOf(
-            "upload" to UploadCommand()
+            "upload" to UploadCommand(),
+            "help" to HelpCommand()
         )
 
         fun execute(args: Array<String>) {
@@ -22,7 +24,6 @@ class CommandMapper {
                 ArgumentValidator(command, args).validate()
                 command.run(args)
             }catch (ex: Exception) {
-                ex.printStackTrace()
                 System.err.println("Command '${args[0]}' not found.")
             }
         }
