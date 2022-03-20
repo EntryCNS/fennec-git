@@ -41,7 +41,7 @@ final class GitWrapper {
     }
 
     public fun getCurrentBranch(): String {
-        return execute("git branch")
+        return execute("git branch").split(" ").last()
     }
 
 
