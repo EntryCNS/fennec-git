@@ -43,7 +43,7 @@ class ArgumentValidator {
         for(i in command.getRequiredArguments().indices) {
             val required = command.getRequiredArguments().get(i)
             if(arguments.size <= i && !required.optional) {
-                val requiredType = required.allowType.map { it.name }.joinToString("/")
+                val requiredType = required.allowType.map { it.description }.joinToString("/")
                 System.err.println("Command '${command.getName()}' requires an argument '${required.name}'(${requiredType} required)")
                 exitProcess(1)
             }
