@@ -1,10 +1,13 @@
 package commands
 
-enum class ArgumentType {
+import commands.branch.BranchType
+import commands.upload.CommitType
+
+enum class ArgumentType(val description: String) {
     // 기본 타입
-    STRING, NUMBER, DIRECTORY,
+    STRING("문자열"), NUMBER("숫자"), DIRECTORY("폴더"),
 
     // ENUM 타입
-    ENUM_COMMITTYPE,
-    ENUM_BRANCHTYPE
+    ENUM_COMMITTYPE(CommitType.values().joinToString("/") { it.name }),
+    ENUM_BRANCHTYPE(BranchType.values().joinToString("/") { it.name })
 }

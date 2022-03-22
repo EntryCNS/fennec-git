@@ -8,7 +8,7 @@ class CommandHelper {
             println("  * ${cmd.getDescription()}")
             println("  * Required args:")
             cmd.getRequiredArguments().forEach { arg ->
-                println("    * '${arg.name}'(${arg.allowType.map { it.name }.joinToString("/")}${if(arg.optional) "?" else ""})")
+                println("    * '${arg.name}'(${arg.allowType.map { it.description }.joinToString(" 또는 ")}${if(arg.optional) "?" else ""})")
             }
 
             println()

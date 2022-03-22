@@ -12,7 +12,7 @@ class CreateBranchCommand: FennecCommand() {
     override fun getDescription(): String = "새 gitflow 브랜치를 생성합니다"
 
     override fun getRequiredArguments(): List<FennecArgument> = listOf(
-        FennecArgument("브랜치 종류(${BranchType.values().map { it.name }.joinToString("/")})", listOf(ArgumentType.ENUM_BRANCHTYPE)),
+        FennecArgument("브랜치 종류", listOf(ArgumentType.ENUM_BRANCHTYPE)),
         FennecArgument("이슈번호", listOf(ArgumentType.NUMBER)),
         FennecArgument("제목", listOf(ArgumentType.STRING))
     )
