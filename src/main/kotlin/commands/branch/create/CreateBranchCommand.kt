@@ -28,6 +28,6 @@ class CreateBranchCommand: FennecCommand() {
         gitWrapper.createBranch(branchName)
         gitWrapper.checkout(branchName)
 
-        println("You're now on ${branchName}")
+        println("You're now on: ${branchName}")
     }
 }
