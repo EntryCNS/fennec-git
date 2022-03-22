@@ -4,6 +4,15 @@ import java.io.BufferedReader
 import java.io.InputStreamReader
 
 final class GitWrapper {
+
+    companion object {
+        private val singleton = GitWrapper()
+
+        fun getInstance(): GitWrapper {
+            return singleton
+        }
+    }
+
     private val shell: Array<String>
 
     init {
@@ -46,6 +55,14 @@ final class GitWrapper {
 
     public fun addAll() {
         execute("git add --all")
+    }
+
+    public fun createBranch(branchName: String) {
+        execute("git branch $branchName")
+    }
+
+    public fun checkout(to: String): String {
+        return execute("git checkout $to")
     }
 
 
