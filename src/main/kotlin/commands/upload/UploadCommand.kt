@@ -21,7 +21,7 @@ class UploadCommand: FennecCommand() {
         val commitTitle = "$emoji ${arguments[1]}"
         val commitDescription = arguments.getOrNull(2)
 
-        val gitWrapper = GitWrapper()
+        val gitWrapper = GitWrapper.getInstance()
         gitWrapper.addAll()
         println(gitWrapper.commit(commitTitle, commitDescription))
         println(gitWrapper.push())
