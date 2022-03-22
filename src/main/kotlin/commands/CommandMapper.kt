@@ -1,5 +1,6 @@
 package commands
 
+import commands.branch.create.CreateBranchCommand
 import commands.help.HelpCommand
 import commands.upload.UploadCommand
 import kotlin.system.exitProcess
@@ -8,6 +9,7 @@ class CommandMapper {
     companion object {
         val map: Map<String, FennecCommand> = mapOf(
             "upload" to UploadCommand(),
+            "flow" to CreateBranchCommand(),
             "help" to HelpCommand()
         )
 

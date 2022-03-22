@@ -5,5 +5,6 @@ enum class ArgumentType {
     STRING, NUMBER, DIRECTORY,
 
     // ENUM 타입
-    ENUM_COMMITTYPE
+    ENUM_COMMITTYPE,
+    ENUM_BRANCHTYPE
 }
