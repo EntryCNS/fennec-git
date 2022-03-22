@@ -11,7 +11,7 @@ class UploadCommand: FennecCommand() {
     override fun getDescription(): String = "git commit 및 push를 진행합니다"
 
     override fun getRequiredArguments(): List<FennecArgument> = listOf(
-        FennecArgument("메시지 타입", listOf(ArgumentType.ENUM_COMMITTYPE)),
+        FennecArgument("커밋 타입", listOf(ArgumentType.ENUM_COMMITTYPE)),
         FennecArgument("메시지 제목", listOf(ArgumentType.STRING)),
         FennecArgument("메시지 바디", listOf(ArgumentType.STRING), true)
     )
