@@ -1,5 +1,6 @@
 package commands
 
+import commands.add.AddCommand
 import commands.branch.create.CreateBranchCommand
 import commands.help.HelpCommand
 import commands.upload.UploadCommand
@@ -9,6 +10,7 @@ class CommandMapper {
     companion object {
         val map: Map<String, FennecCommand> = mapOf(
             "upload" to UploadCommand(),
+            "add" to AddCommand(),
             "flow" to CreateBranchCommand(),
             "help" to HelpCommand()
         )

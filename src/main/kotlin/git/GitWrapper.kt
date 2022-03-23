@@ -1,7 +1,9 @@
 package git
 
 import java.io.BufferedReader
+import java.io.BufferedWriter
 import java.io.InputStreamReader
+import java.io.OutputStreamWriter
 
 final class GitWrapper {
 
@@ -37,6 +39,17 @@ final class GitWrapper {
         return response
     }
 
+    public fun executeWithInteractive(cmd: String) {
+        val processBuilder = ProcessBuilder()
+        processBuilder.command(*shell, cmd)
+
+        processBuilder.redirectInput(ProcessBuilder.Redirect.INHERIT)
+        processBuilder.redirectOutput(ProcessBuilder.Redirect.INHERIT)
+
+        val process = processBuilder.start()
+        process.waitFor()
+    }
+
     public fun push(force: Boolean = false): String {
         val result = if(force) execute("git push --force origin")
         else execute("git push origin")
@@ -55,6 +68,10 @@ final class GitWrapper {
 
     public fun addAll() {
         execute("git add --all")
+    }
+
+    public fun addWithModal() {
+        executeWithInteractive("git add -p")
     }
 
     public fun createBranch(branchName: String) {

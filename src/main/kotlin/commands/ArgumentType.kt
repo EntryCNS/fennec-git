@@ -1,6 +1,7 @@
 package commands
 
 import commands.branch.BranchType
+import commands.add.AddType
 import commands.upload.CommitType
 
 enum class ArgumentType(val description: String) {
@@ -9,5 +10,6 @@ enum class ArgumentType(val description: String) {
 
     // ENUM 타입
     ENUM_COMMITTYPE(CommitType.values().joinToString("/") { it.name }),
+    ENUM_ADDTYPE(AddType.values().joinToString("/") { it.name }),
     ENUM_BRANCHTYPE(BranchType.values().joinToString("/") { it.name })
 }

@@ -3,6 +3,7 @@ package commands.upload
 import commands.ArgumentType
 import commands.FennecArgument
 import commands.FennecCommand
+import commands.add.AddType
 import git.GitWrapper
 
 class UploadCommand: FennecCommand() {
@@ -22,7 +23,6 @@ class UploadCommand: FennecCommand() {
         val commitDescription = arguments.getOrNull(2)
 
         val gitWrapper = GitWrapper.getInstance()
-        gitWrapper.addAll()
         println(gitWrapper.commit(commitTitle, commitDescription))
         println(gitWrapper.push())
 

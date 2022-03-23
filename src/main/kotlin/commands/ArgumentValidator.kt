@@ -1,6 +1,7 @@
 package commands
 
 import commands.branch.BranchType
+import commands.add.AddType
 import commands.upload.CommitType
 import java.io.File
 import kotlin.system.exitProcess
@@ -25,6 +26,9 @@ class ArgumentValidator {
             }
             ArgumentType.ENUM_COMMITTYPE -> {
                 CommitType.values().map { it.name }.contains(argument.uppercase())
+            }
+            ArgumentType.ENUM_ADDTYPE -> {
+                AddType.values().map { it.name }.contains(argument.uppercase())
             }
             ArgumentType.ENUM_BRANCHTYPE -> {
                 BranchType.values().map { it.name }.contains(argument.uppercase())
