@@ -3,6 +3,7 @@ package commands
 import commands.add.AddCommand
 import commands.branch.create.CreateBranchCommand
 import commands.help.HelpCommand
+import commands.info.InfoCommand
 import commands.upload.UploadCommand
 import kotlin.system.exitProcess
 
@@ -12,6 +13,7 @@ class CommandMapper {
             "upload" to UploadCommand(),
             "add" to AddCommand(),
             "flow" to CreateBranchCommand(),
+            "info" to InfoCommand(),
             "help" to HelpCommand()
         )
 
